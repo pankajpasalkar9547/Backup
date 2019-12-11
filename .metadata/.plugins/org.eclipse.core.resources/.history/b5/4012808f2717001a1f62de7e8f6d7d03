@@ -1,0 +1,53 @@
+
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.healthinsurance.model.User;
+
+/**
+ * Servlet implementation class CustomerController
+ */
+@WebServlet("/CustomerController")
+public class CustomerController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    static User user = new User();   
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CustomerController() {
+        super();
+    }
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name = request.getParameter("name");
+		String address = request.getParameter("address");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		int age = (Integer.parseInt(request.getParameter("age")));
+		String email = request.getParameter("email");
+		String gender = request.getParameter("gender");
+		String birthdate = request.getParameter("birthdate");
+		
+		user.setName(name);
+		user.setAddress(address);
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setAge(age);
+		user.setEmail(email);
+		user.setGender(gender);
+		user.setBirthDate(birthdate);
+		doGet(request, response);
+	}
+
+}

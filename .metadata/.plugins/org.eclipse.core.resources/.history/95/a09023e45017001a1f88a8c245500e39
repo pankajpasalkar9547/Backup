@@ -1,0 +1,51 @@
+package com.healthinsurance.Controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.healthinsurance.DAO.CheckDAO;
+import com.healthinsurance.DAO.CheckDAOImpl;
+import com.healthinsurance.model.PolicyData;
+
+
+@WebServlet("/CheckController")
+public class CheckController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	static CheckDAO checkDao = new CheckDAOImpl(); 
+       
+ 
+    public CheckController() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<PolicyData> policyData = new ArrayList<PolicyData>();
+		int age = Integer.parseInt(request.getParameter("age"));
+		int salary = Integer.parseInt(request.getParameter("salary"));
+		String location = request.getParameter("location");
+		policyData=checkDao.getDetails(age, salary, location);
+		
+		if (policyData != null)
+		{
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("Product.jsp");
+			request.setAttribute("product",product);
+			requestDispatcher.forward(request, response);
+		}
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}

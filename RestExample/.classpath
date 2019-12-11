@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_102">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/Softwares/jersey.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/animal-sniffer-annotations-1.18.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/cloudplatform-core-3.7.0.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/error_prone_annotations-2.3.3.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/failureaccess-1.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/gson-2.8.6.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/guava-28.1-jre.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/httpcore-4.4.12.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/j2objc-annotations-1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/jackson-annotations-2.10.0.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/jackson-core-2.10.0.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/jackson-databind-2.10.0.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/jaxrs-3.7.0.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/jsr305-3.0.2.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/servlet-3.7.0.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/vavr-0.9.3.jar"/>
+	<classpathentry kind="lib" path="D:/Softwares/Jax rs/vavr-match-0.9.3.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

@@ -1,0 +1,6 @@
+package com.Connection;
+
+@P("/UserPOJO")
+public class UserDaoImple {
+	
+}

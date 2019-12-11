@@ -1,0 +1,42 @@
+package com.healthinsurance.model;
+
+public class PolicyData {
+	private int policyId;
+	private String policyName;
+	private int sumInsured;
+	private String companyName;
+	private String location;
+	public int getPolicyId() {
+		return policyId;
+	}
+	public void setPolicyId(int policyId) {
+		this.policyId = policyId;
+	}
+	public String getPolicyName() {
+		return policyName;
+	}
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+	}
+	public int getSumInsured() {
+		return sumInsured;
+	}
+	public void setSumInsured(int sumInsured) {
+		this.sumInsured = sumInsured;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
+	
+
+}

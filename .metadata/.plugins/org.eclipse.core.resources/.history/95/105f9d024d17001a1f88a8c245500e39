@@ -1,0 +1,24 @@
+package com.healthinsurance.DAO;
+
+import java.sql.Connection;
+import java.util.List;
+
+import com.healthinsurance.utility.DBConnection;
+
+public class CheckDAOImpl implements CheckDAO {
+
+	@Override
+	public List getDetails(int age, int salary, String location) {
+		String sql="SELECT policyid,policyname,suminsured,companyname,location FROM companydata inner join policydata ON policydata.policyid = companydata.policyid  where suminsured >"+salary+" and location = "+location;
+		try(Connection con = DBConnection.getConnection())
+		{
+			 
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

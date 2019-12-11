@@ -1,0 +1,68 @@
+package com.healthinsurance.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.allianz.shopping.utility.DBUtility;
+import com.healthinsurance.model.User;
+import com.healthinsurance.utility.DBConnection;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public boolean addUser(User user) {
+		int isAdded=0;
+		String sql="insert into userinfo(name,address,username,password,age,email,gender,birthdate) values(?,?,?,?,?,?,?,?)";
+		try(Connection con=DBConnection.getConnection();)
+		{
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, user.getName());
+			pst.setString(2, user.getAddress());
+			pst.setString(3, user.getUsername());
+			pst.setString(4, user.getPassword());
+			pst.setInt(5, user.getAge());
+			pst.setString(6, user.getEmail());
+			pst.setString(7, user.getGender());
+			pst.setString(8, user.getBirthDate());
+			
+			isAdded = pst.executeUpdate(); 
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		if(isAdded==1)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+
+	@Override
+	public boolean login(String username, String password) {
+		try(Connection con=DBConnection.getConnection())
+		{
+			
+			String sql = "SELECT * from userinfo";
+			PreparedStatement pst = con.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				String user = rs.getString("username");
+				String pass = rs.getString("password");
+				if(user.equalsIgnoreCase(username)&&pass.equalsIgnoreCase(password))
+				{
+					return true;
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return false;
+	}
+}
+

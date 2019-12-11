@@ -1,0 +1,85 @@
+package com.healthinsurance.Controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.healthinsurance.DAO.NormalPremiumCalculationStrategy;
+import com.healthinsurance.DAO.PremiumCalculationStrategy;
+import com.healthinsurance.model.Person;
+import com.healthinsurance.model.PolicyData;
+
+/**
+ * Servlet implementation class PremiumController
+ */
+@WebServlet("/PremiumController")
+public class PremiumController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	static Person person=new Person();
+       static NormalPremiumCalculationStrategy normalPremiumCalculationStrategy=new NormalPremiumCalculationStrategy();
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PremiumController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
+		
+		
+		String name1=request.getParameter("name");
+		String gender1= request.getParameter("gender");
+		int age1=Integer.parseInt(request.getParameter("age"));
+		System.out.println(age1);
+		String healthIssues1=request.getParameter("healthIssues");
+		String habbits1=request.getParameter("habbits");
+		
+		System.out.println(name1);
+		System.out.println(gender1);
+		
+		
+		Person person=new Person(name1,gender1, age1,healthIssues1, habbits1);
+		PrintWriter out=response.getWriter();
+		//boolean isAdded=normalPremiumCalculationStrategy.addUser(person);
+		
+		if(action != null && action.equals("calpremium"))
+		{
+			double premium=normalPremiumCalculationStrategy.calculatePremium(person);
+			
+			if (premium != 0 && action.equals("calpremium"))
+			{
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("calcpremium.jsp");
+				request.setAttribute("premium",premium);
+				requestDispatcher.forward(request, response);
+			}
+		}else if(action!=null && action.equals("save")){
+			if(normalPremiumCalculationStrategy.addUser(person))
+			{
+				out.println("User Added");
+			}else
+			{
+				out.println("User Not Added");
+			}
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.pojo;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.ws.Response;
+
+@XmlRootElement
+public class StatusPOJO {
+	private Response status;
+
+	public Response getStatus() {
+		return status;
+	}
+
+	public void setStatus(Response status) {
+		this.status = status;
+	}
+
+	public StatusPOJO(Response status) {
+		super();
+		this.status = status;
+	}
+}

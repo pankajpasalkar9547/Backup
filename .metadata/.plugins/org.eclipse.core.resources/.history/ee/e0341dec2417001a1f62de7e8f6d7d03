@@ -1,0 +1,41 @@
+package com.healthinsurance.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.healthinsurance.model.User;
+import com.healthinsurance.utility.DBConnection;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public boolean addUser(User user) {
+		int isAdded;
+		String sql="insert into user(name,address,username,password,age,email,gender,birthdate) values(?,?,?,?,?,?,?,?)";
+		try(Connection con=DBConnection.getConnection();)
+		{
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, user.getName());
+			pst.setString(2, user.getAddress());
+			pst.setString(3, user.getUsername());
+			pst.setString(4, user.getPassword());
+			pst.setInt(5, user.getAge());
+			pst.setString(6, user.getEmail());
+			pst.setString(7, user.getGender());
+			pst.setString(8, user.getBirthDate());
+			
+			isAdded = pst.executeUpdate(); 
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		if(isAdded==1)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+
+}

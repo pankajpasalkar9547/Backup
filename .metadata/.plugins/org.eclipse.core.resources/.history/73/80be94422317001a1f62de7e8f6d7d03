@@ -1,0 +1,13 @@
+package com.healthinsurance.DAO;
+
+import com.healthinsurance.model.User;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public boolean addUser(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

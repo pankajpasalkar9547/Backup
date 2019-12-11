@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" method="post">
+		<input type="text" value=${policyData.policyId} name="policyid">
+				<input type="text" value=${policyData.policyName} name="policyname">
+				<input type="text" value=${policyData.sumInsured} name="suminsured">
+				<input type="text" value=${policyData.companyId} name="companyid">
+				<input type="text" value=${policyData.companyName} name="companyname">
+				<input type="text" value=${policyData.location} name="location">
+				
+				<a href="BuyController?action=buypolicy&companyid=${policyData.companyId}">Buy Policy</a>
+	</form>>
+
+</body>
+</html>

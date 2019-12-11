@@ -1,0 +1,26 @@
+package com.healthinsurance.DAO;
+
+import java.sql.Connection;
+
+import com.healthinsurance.model.User;
+import com.healthinsurance.utility.DBConnection;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public boolean addUser(User user) {
+		Connection con=null;
+		String sql="insert into user(name,address,username,password,age,email,gender,birthdate) values(?,?,?,?,?,?,?,?)";
+		try(con=DBConnection.getConnection();)
+		{
+			
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+}

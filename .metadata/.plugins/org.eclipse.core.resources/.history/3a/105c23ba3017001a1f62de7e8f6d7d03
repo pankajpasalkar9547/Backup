@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="CustomerController" method="get">
+		<pre>
+			Enter The Name 			:	<input type="text" name="name" placeholder="Enter The Name "/><br><br>
+			Enter The Address 		:	<input type="text" name="address" placeholder="Enter The Address "/><br><br>
+			Enter The Username 		: 	<input type="text" name="username" placeholder="Enter The Username "/><br><br>
+			Enter The Password 		:	<input type="password" name="password" placeholder="Enter The Password "/><br><br>
+			Enter The Age 			: 	<input type="number" name="age" placeholder="Enter The Age "/><br><br>
+			Enter The Email 		:   <input type="email" name="email" placeholder="Enter The Email "/><br><br>
+			Enter The Gender 		:	<input type="text" name="gender" placeholder="Enter The Gender "/><br><br>
+			Enter The Birthdate 	:	<input type="text" name="birthdate" placeholder="Enter The Bithdate "/><br><br>
+			
+			<input type="submit" value="Submit"/><br><br>
+			<input type="reset" value="Reset">
+		</pre>
+	</form>
+</body>
+</html>

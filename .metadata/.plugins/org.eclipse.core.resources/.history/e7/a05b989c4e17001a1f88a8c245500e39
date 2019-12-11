@@ -1,0 +1,10 @@
+package com.healthinsurance.model;
+
+public class PolicyData {
+	private int policyId;
+	private String policyName;
+	private int sumInsured;
+	private String companyName;
+	private String location;
+
+}

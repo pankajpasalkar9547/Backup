@@ -1,0 +1,13 @@
+package com.healthinsurance.DAO;
+
+import java.util.List;
+
+public class CheckDAOImpl implements CheckDAO {
+
+	@Override
+	public List getDetails(int age, int salary, String location) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.healthinsurance.DAO;
+
+public interface UserDAO {
+
+}

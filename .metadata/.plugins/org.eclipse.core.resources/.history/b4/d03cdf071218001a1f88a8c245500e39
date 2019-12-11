@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<jsp:include page="header.jsp"></jsp:include>
+	<hr color="red"><hr color="red">
+	<form action="CheckOutController" method="post">
+		
+			<c:forEach items="${policyData}" var="policy">
+				<!--  Policy ID 	: <input type="text" value=${policy.policyId} name="policyid" disabled><br><br>
+				Policy Name : <input type="text" value=${policy.policyName} name="policyname" disabled><br><br>
+				Sum Insured : <input type="text" value=${policy.sumInsured} name="suminsured" disabled><br><br>
+				Company ID 	: <input type="text" value=${policy.companyId} name="companyid" disabled><br><br>
+				Company Name : <input type="text" value=${policy.companyName} name="companyname" disabled><br><br>
+				Location 	: <input type="text" value=${policy.location} name="location" disabled><br><br>
+				<a href="BuyController?action=buypolicy&companyid=${policy.companyId}">Buy Policy</a>
+				<hr color="red"><hr color="red">
+				<br><br>-->
+				
+				<div class="wrap-input100 validate-input" >
+				Policy ID 	: <input type="text" value=${policy.policyId} name="policyid" disabled><br><br>
+				Policy Name : <input type="text" value=${policy.policyName} name="policyname" disabled><br><br>
+				Sum Insured : <input type="text" value=${policy.sumInsured} name="suminsured" disabled><br><br>
+				Company ID 	: <input type="text" value=${policy.companyId} name="companyid" disabled><br><br>
+				Company Name : <input type="text" value=${policy.companyName} name="companyname" disabled><br><br>
+				Location 	: <input type="text" value=${policy.location} name="location" disabled><br><br>
+				<a href="BuyController?action=buypolicy&companyid=${policy.companyId}">Buy Policy</a>
+				<hr color="red"><hr color="red">
+					
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+			
+			</c:forEach>
+		
+	</form>
+</body>
+</html>
